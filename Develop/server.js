@@ -19,12 +19,22 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html
 app.get(`/api/notes`, (req, res) => res.sendFile(path.join(__dirname, "/db/db.json")))
 
 app.post(`/api/notes`, (req, res) => {
+    //Grabs the object array data from the json from and puts it into a variable
     let getFile = JSON.parse(fs.readFileSync("./db/db.json", "utf8")) 
+
+    //Grabs the note data from the html body
     let newNote = req.body
+
+    //Note id based on getFile length
     let noteID = getFile.length
+
+    //Adds id onto the note object
     newNote.id = noteID
+
+    //Pushes new note to the getFile array
     getFile.push(newNote)
 
+    //Adds updated object array onto the JSON file
     fs.writeFile("./db/db.json", JSON.stringify(getFile), (err) => {
         if (err) {
             console.log(err)
@@ -48,7 +58,7 @@ app.delete(`/api/notes/:id`, (req, res) => {
     //Calls the new ElementID Function
     newElementID()
     
-    //Once a element gets deleted, ID get reassigned
+    //Once a element gets deleted, new ids are created to match their index in the array
     function newElementID() {
         //This is to recreate the new ID for each element on the object array
         let newID = 0
@@ -59,6 +69,7 @@ app.delete(`/api/notes/:id`, (req, res) => {
         });
     }
 
+    //Adds updated object array onto the JSON file
     fs.writeFile("./db/db.json", JSON.stringify(getFile), (err) => {
         if (err) {
             console.log(err)
