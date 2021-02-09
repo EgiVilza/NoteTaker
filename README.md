@@ -1,80 +1,53 @@
-# Unit 11 Express Homework: Note Taker
+# Note Taker
 
 ## Description
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+The project is to demostrate creating, reading, updated, and deleting notes through a local host server using node express
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+# Table of Contents
 
-* The following HTML routes should be created:
+* [Installation](#installation)
 
-  * GET `/notes` - Should return the `notes.html` file.
+* [License](#license)
 
-  * GET `*` - Should return the `index.html` file
+* [Contributing](contributing)
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+* [Usage](#usage)
 
-* The following API routes should be created:
+* [Tests](#tests)
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+* [Questions](#questions)
 
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+## Installation
 
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+To install necessary dependencies, run the following command:
 
-## User Story
+''
+npm i
+''
 
-AS A user, I want to be able to write and save notes
+## License
 
-I WANT to be able to delete notes I've written before
+This projects is licensed under the None license.
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+## Contributing
 
-## Business Context
+NA
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+## Usage
 
-## Acceptance Criteria
+NA
 
-Application should allow users to create and save notes.
+## Tests
 
-Application should allow users to view previously saved notes.
+To run tests, rund the following command:
 
-Application should allow users to delete previously saved notes.
+''
+none
+''
 
-## Deploying the App
+## Questions
 
-You will not be able to deploy your server side code on GitHub pages. This app should be deployed on Heroku. Carefully follow the [Heroku Guide](../04-Important/HerokuGuide.md) for getting your app deployed on Heroku.
+If you have any questions about the repo, open an issue or contact me at egivilza@email.com.
+You can find more of my work at: [egivilza](https://github.com/egivilza).
 
-- - -
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
-
-* The URL of the GitHub repository
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
